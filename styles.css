@@ -1,0 +1,116 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: hsl(30, 38%, 92%);
+}
+
+.card {
+  display: flex;
+  max-width: 550px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.card-content {
+  background: hsl(0, 0%, 100%);
+  padding: 24px;
+}
+
+.card .img-desktop {
+  max-width: 50%;
+  height: auto;
+}
+
+.card h2 {
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: hsl(228, 12%, 48%);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.card h1 {
+  font-family: Fraunces, serif;
+  line-height: 1;
+}
+
+.card p {
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+  color: hsl(228, 12%, 48%);
+  line-height: 1.4;
+}
+
+.card .price {
+  font-family: Fraunces, serif;
+  color: hsl(158, 36%, 37%);
+  font-size: 32px;
+}
+
+.card .price-group {
+  display: flex;
+  align-items: center;
+}
+
+.card .price-original {
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+  color: hsl(228, 12%, 48%);
+  margin-left: 20px;
+  text-decoration: line-through;
+}
+
+.card button {
+  display: block;
+  background: hsl(158, 36%, 37%);
+  border: 0;
+  padding: 10px;
+  margin-top: 22px;
+  width: 100%;
+  border-radius: 6px;
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: hsl(0, 0%, 100%);
+}
+
+.card button i {
+  margin-right: 10px;
+}
+
+@media (max-width: 375px) {
+  .card {
+    max-width: 345px;
+    flex-direction: column;
+  }
+
+  .card .img-desktop {
+    display: none;
+    max-width: 0;
+    max-height: 0;
+  }
+
+  .card .img-mobile {
+    min-width: 100%;
+  }
+
+  .card h1 {
+    margin: 15px 0;
+  }
+
+  .card button {
+    padding: 16px;
+  }
+}
+
+@media (min-width: 376px) {
+  .card .img-mobile {
+    display: none;
+  }
+}
