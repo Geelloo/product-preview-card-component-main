@@ -1,116 +1,202 @@
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
+:root {
+  --clr-primary-400: hsl(158, 36%, 37%);
+  --clr-primary-500: hsl(158, 36%, 20%);
+
+  --clr-accent-400: hsl(30, 38%, 92%);
+
+  --clr-neutral-900: hsl(212, 21%, 14%);
+  --clr-neutral-400: hsl(228, 12%, 48%);
+  --clr-neutral-200: hsl(0, 0%, 100%);
+
+  --ff-regular: Montserrat, sans-serif;
+  --ff-accent: Fraunces, serif;
+
+  --fw-regular: 500;
+  --fw-bold: 700;
+}
+
+/* CSS Reset */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
-  background: hsl(30, 38%, 92%);
 }
 
-.card {
-  display: flex;
-  max-width: 550px;
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-.card-content {
-  background: hsl(0, 0%, 100%);
-  padding: 24px;
-}
-
-.card .img-desktop {
-  max-width: 50%;
-  height: auto;
-}
-
-.card h2 {
-  font-family: Montserrat, sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  color: hsl(228, 12%, 48%);
-  text-transform: uppercase;
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
   margin: 0;
 }
 
-.card h1 {
-  font-family: Fraunces, serif;
+/* Adjust line height */
+h1 {
   line-height: 1;
 }
 
-.card p {
-  font-family: Montserrat, sans-serif;
-  font-size: 14px;
-  color: hsl(228, 12%, 48%);
-  line-height: 1.4;
+p {
+  line-height: 1.7;
 }
 
-.card .price {
-  font-family: Fraunces, serif;
-  color: hsl(158, 36%, 37%);
-  font-size: 32px;
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
 }
 
-.card .price-group {
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Utilities */
+.price-group {
   display: flex;
+  gap: 1rem;
   align-items: center;
 }
 
-.card .price-original {
-  font-family: Montserrat, sans-serif;
-  font-size: 14px;
-  color: hsl(228, 12%, 48%);
-  margin-left: 20px;
-  text-decoration: line-through;
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
-.card button {
-  display: block;
-  background: hsl(158, 36%, 37%);
-  border: 0;
-  padding: 10px;
-  margin-top: 22px;
-  width: 100%;
-  border-radius: 6px;
-  font-family: Montserrat, sans-serif;
-  font-size: 14px;
-  font-weight: 700;
-  color: hsl(0, 0%, 100%);
+/* Custom CSS */
+body {
+  background-color: var(--clr-accent-400);
+  color: var(--clr-neutral-400);
+  font-family: var(--ff-regular);
+  font-size: 0.875rem;
+  font-weight: var(--fw-regular);
+  margin: 1rem;
+
+  /* To center the card in the middle of the screen */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.card button i {
-  margin-right: 10px;
+.product {
+  background-color: var(--clr-neutral-200);
+  border-radius: 0.5rem;
+  overflow: hidden;
 }
 
-@media (max-width: 375px) {
-  .card {
-    max-width: 345px;
-    flex-direction: column;
-  }
-
-  .card .img-desktop {
-    display: none;
-    max-width: 0;
-    max-height: 0;
-  }
-
-  .card .img-mobile {
-    min-width: 100%;
-  }
-
-  .card h1 {
-    margin: 15px 0;
-  }
-
-  .card button {
-    padding: 16px;
-  }
+.product__content {
+  display: grid;
+  gap: 0.75rem;
+  padding: 1.5rem;
 }
 
-@media (min-width: 376px) {
-  .card .img-mobile {
-    display: none;
+.product__category {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 0.8125rem;
+}
+
+.product__title {
+  font-family: var(--ff-accent);
+  font-size: 2rem;
+  color: var(--clr-neutral-900);
+}
+
+.product__current-price {
+  color: var(--clr-primary-400);
+  font-family: var(--ff-accent);
+  font-size: 2rem;
+  font-weight: var(--fw-bold);
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--clr-primary-400);
+  color: var(--clr-neutral-200);
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.8125rem 1.5rem;
+  font-size: 0.9375rem;
+  font-weight: var(--fw-bold);
+}
+
+.button[data-icon="shopping-cart"]::before {
+  content: "";
+  width: 15px;
+  height: 16px;
+  background-image: url("images/icon-cart.svg");
+}
+
+.button:is(:hover, :focus) {
+  background-color: var(--clr-primary-500);
+}
+
+@media (min-width: 600px) {
+  .product {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 600px;
+  }
+
+  .button {
+    padding: 0.5rem 1.5rem;
   }
 }
