@@ -10,8 +10,8 @@ This is a solution to the [Product preview card component challenge on Frontend 
 
 ### Links
 
-- Solution URL: [https://www.frontendmentor.io/solutions/qr-code-component-qdI25NbYT](https://www.frontendmentor.io/solutions/qr-code-component-qdI25NbYTQ)
-- Live Site URL: [https://geelloo.github.io/qr-code-component/](https://geelloo.github.io/qr-code-component/)
+- Solution URL: [https://www.frontendmentor.io/solutions/product-preview-card-component-nGiytVULBW](https://www.frontendmentor.io/solutions/product-preview-card-component-nGiytVULBW)
+- Live Site URL: [https://geelloo.github.io/product-preview-card-component-main/](https://geelloo.github.io/product-preview-card-component-main/)
 
 ## My process
 
